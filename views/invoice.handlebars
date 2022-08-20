@@ -20,8 +20,8 @@
     <td> {{Invoice.amount}} </td>
     <td> {{Invoice.due_date}} </td>
     <td> {{Invoice.memo}} </td>
-    <td> <button type="submit" class="change" id={{Invoice.invoice_number}}></button></td>
-    <td> <button type="submit" class="del" id={{Invoice.invoice_number}}></button></td>
+    <td> <button type="submit" class="change" id={{Invoice.invoice_number}}><i class="fa fa-edit"></i></button></td>
+    <td> <button type="submit" class="del" id={{Invoice.invoice_number}}><i class="fa fa-trash"></i></button></td>
   </tr>
   {{/each}}
 </table>
