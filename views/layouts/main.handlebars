@@ -2,6 +2,23 @@
 <html lang="en">
 
 <head>
+  <style>
+.bg-image{
+background-color: #a39484;
+height: 100vh;
+width:100%
+
+}
+.btn-primary{
+  background-color: black;
+}
+.navbar{
+  background-color: #2d545e;
+}
+.nav-item{
+  background-color: #2d545e;
+}
+  </style>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,39 +29,23 @@
   <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="/css/styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-  <header class="navbar bg-primary">
-        <div class="container-fluid text-light">
-                <span class="navbar-brand mb-0 h1 bg-primary text-light fw-bold">Invoice Manager+</span>
-                <ul class="nav">
-                      <li class="nav-item text-white bg-primary p-3">
-                        <a class="nav-link active text-light" aria-current="page" href="/api/invoices/new">New Invoice</a>
-                      </li>
-                      <li class="nav-item text-white bg-primary p-3">
-                        <a class="nav-link active text-light" aria-current="page" href="/api/invoices/">Manage Invoices</a>
-                      </li>
-                      <li class="nav-item text-white bg-primary p-3">
-                        <a class="nav-link active text-light" aria-current="page" href="/api/clients/">Manage Client</a>
-                      </li>
-                      <li class="nav-item text-white bg-primary p-3" id="newclient">
-                        <a class="nav-link active text-light" aria-current="page" href="/api/clients/new">Add Client</a>
-                      </li>
-                      <li class="nav-item text-white bg-primary p-3">
-                        {{#if loggedIn}}
-                        <button id="logout" class="btn-no-style">Logout</button>
-                          {{!-- <button class=" btn-no-style nav-link active text-warning " aria-current="page"  id="logout-nav">Logout</button> --}}
-                        {{else}}
-                          <a href="/login" class="nav-link active text-warning align-middle px-0">Login</a>
-                        {{/if}}
-                      </li>
-
-                </ul>
-        </div>
-    </header>
-  <main class="container container-fluid mt-5" id="main-render">
+  <header class="navbar">
+      <div class="container-fluid text-light">
+        <span style="font-family: 'Abril Fatface', cursive;font-size:30px;"class="navbar-brand mb-0 h1  text-light fw-bold">Invoice Manager+</span>
+       <button class="btn btn-primary"style="background-color:#2d545e;border-radius: 15px;border-color: white; "> <h3 style="font-size:30px;font-family: 'Abril Fatface', cursive;"><span><a style="color:white;font-weight:bold;" href="/login" class="nav-link active  align-middle px-0">Login</a></span></h3></button>
+        </header>
+  <main class="bg-image" id="main-render"
+            >
     <!-- Render the sub layout -->
     {{{ body }}}
   </main>
