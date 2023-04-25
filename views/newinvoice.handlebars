@@ -1,44 +1,18 @@
 {{#if loggedIn}}
-<header class="navbar">
-    <div class="container-fluid text-light">
-        <span class="navbar-brand mb-0 h1  text-light fw-bold">Invoice Manager+</span>
-        <ul class="nav">
-            <li class="nav-item text-white  p-3">
-                <a class="nav-link active text-light" aria-current="page" href="/api/invoices/new">New Invoice</a>
-            </li>
-            <li class="nav-item text-white  p-3">
-                <a class="nav-link active text-light" aria-current="page" href="/api/invoices/">Manage Invoices</a>
-            </li>
-            <li class="nav-item text-white p-3">
-                <a class="nav-link active text-light" aria-current="page" href="/api/clients/">Manage Client</a>
-            </li>
-            <li class="nav-item text-white  p-3" id="newclient">
-                <a class="nav-link active text-light" aria-current="page" href="/api/clients/new">Add Client</a>
-            </li>
-            <li class="nav-item text-white  p-3">
-                {{#if loggedIn}}
-                <button id="logout" class="btn-no-style">Logout</button>
-                {{!-- <button class=" btn-no-style nav-link active text-warning " aria-current="page"
-                    id="logout-nav">Logout</button> --}}
-                {{else}}
-                <a href="/login" class="nav-link active text-warning align-middle px-0">Login</a>
-                {{/if}}
-            </li>
+<div style="height: 450px;width:500px;border-width:2px;border-style:solid;margin-left:500px;background-color:#a39484"
+    class="col-md-6">
 
-        </ul>
-    </div>
-</header>
-<div class="col-md-6">
-    <h2 id="heading"  id="new-invoice-heading">New Invoice</h2>
+    <h2 id="heading" style="text-align: center;text-decoration-line: underline;padding-top:20px;padding-bottom:20px;"
+        id="new-invoice-heading">New Invoice</h2>
 
     <div class="col-md-6">
         <form class="form-group">
             <div class="form-group">
 
-               
 
-                <label> Client Name</label>
-                <select name="name" id="names">
+
+                <label style="margin-left:30px;font-weight: bold;"> Client Name</label>
+                <select style="margin-left:30px" name="name" id="names">
                     {{#each allClients as |Client| }}
 
                     <option value={{Client.id}} id={{Client.id}}>{{Client.client_name}}</option>
@@ -46,44 +20,46 @@
                     {{!-- <input id="id" type="text" class="form-control" placeholder="Clientid"> --}}
                 </select>
 
-            
-                 </select>
+
+                </select>
                 {{!-- <input id="id" type="text" class="form-control" placeholder="Clientid"> --}}
 
             </div>
 
 
-                <div class="form-group">
-                    <label> Amount</label>
-                    <input id="amount" type="text" class="form-control" placeholder="Enter Amount">
-                </div>
+            <div class="form-group">
+                <label style="margin-left:30px;font-weight: bold;"> Amount</label>
+                <input style="margin-left:30px" id="amount" type="text" class="form-control" placeholder="Enter Amount">
+            </div>
 
-                <div class="form-group">
-                    <label> Due Date</label>
-                    <input id="ddate" type="text" class="form-control" placeholder="Due Date">
-
-                </div>
-
-                <div class="form-group">
-                    <label> Notes</label>
-                    <input id="memo" type="text" class="form-control" placeholder="Notes">
-
-                </div>
-                <div class="form-group">
-
-
-                    
-              
-
-                <button class="btn btn-primary" id="newinvoice" type="submit">Create And Send Email</button>
-                  </div>
-                <h3 id="invoiceadd">New Invoice Is Added</h3>
+            <div class="form-group">
+                <label style="margin-left:30px;font-weight: bold;"> Due Date</label>
+                <input style="margin-left:30px" id="ddate" type="text" class="form-control" placeholder="Due Date">
 
             </div>
-        </form>
-    </div>
-    {{else}}
-    <p>You must Login to add Invoice</p>
-    {{/if}}
 
-    <script src="/js/newinvoice.js"></script>
+            <div class="form-group">
+                <label style="margin-left:30px;font-weight: bold;"> Notes</label>
+                <input style="margin-left:30px" id="memo" type="text" class="form-control" placeholder="Notes">
+
+            </div>
+            <div class="form-group">
+
+
+
+
+
+                <button style="margin-left:30px;background-color: black;color:aliceblue" class="btn" id="newinvoice"
+                    type="submit">Create And Send Email</button>
+            </div>
+            <h3 id="invoiceadd">New Invoice Is Added</h3>
+
+    </div>
+    </form>
+
+</div>
+{{else}}
+<p>You must Login to add Invoice</p>
+{{/if}}
+
+<script src="/js/newinvoice.js"></script>
